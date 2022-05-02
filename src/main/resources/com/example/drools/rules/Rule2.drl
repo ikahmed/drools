@@ -1,0 +1,26 @@
+package com.example.drools.rules;
+
+import com.example.drools.model.Customer;
+import com.example.drools.model.Notification;
+
+global com.example.drools.model.Result result;
+global org.slf4j.Logger logger;
+
+dialect "java"
+ 
+
+
+rule "Notification 1999" salience -1
+ when
+       customer:Customer()
+       $notification:Notification( getType() == '1999' ) and
+    then
+      logger.info("Executing Notification 1999 " );
+      customer.setEnglishName("ABC");
+      result.successful(false);
+end
+
+
+
+
+

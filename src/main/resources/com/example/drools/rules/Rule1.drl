@@ -1,0 +1,24 @@
+package com.example.drools.rules;
+
+import com.example.drools.model.Customer;
+import com.example.drools.model.Customer;
+import com.example.drools.model.Notification;
+
+global com.example.drools.model.Result result;
+global org.slf4j.Logger logger;
+
+global com.example.drools.model.Result result;
+
+dialect "java"
+ 
+
+rule "Notifications"
+ when
+      $notification:Notification( getType().trim().length > 0 && getType().trim().charAt(0) == 'N' )
+      
+    then
+      Logger logger = LoggerFactory.getLogger(App.class);
+      logger.info("Executing NIC Notification Rule");
+      result.successful(false);
+    
+ end
