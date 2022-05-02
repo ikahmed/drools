@@ -18,7 +18,7 @@ rule "Notifications"
       
     then
       Logger logger = LoggerFactory.getLogger(App.class);
-      logger.info("Executing NIC Notification Rule");
+      logger.info("Executing  Notification Rule");
       result.successful(false);
     
  end
